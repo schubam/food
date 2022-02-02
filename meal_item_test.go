@@ -9,20 +9,20 @@ func TestNewMealItem(t *testing.T) {
 
 	item := NewMealItem(name, values[0], values[1], values[2], values[3])
 
-	if item.name != name {
-		t.Fatalf("name wrong. expected=%q, got=%q", "Tuna Pizza", item.name)
+	if item.Name != name {
+		t.Fatalf("name wrong. expected=%q, got=%q", "Tuna Pizza", item.Name)
 	}
 
-	if item.nutrition.calories != expected[values[0]] {
-		t.Fatalf("calories wrong. expected=%q, got=%q", expected[values[0]], item.nutrition.calories)
+	if item.Nutrition.Calories != expected[values[0]] {
+		t.Fatalf("calories wrong. expected=%q, got=%q", expected[values[0]], item.Nutrition.Calories)
 	}
-	if item.nutrition.carbohydrateContent != expected[values[1]] {
-		t.Fatalf("carbohydrateContent wrong. expected=%q, got=%q", expected[values[1]], item.nutrition.carbohydrateContent)
+	if item.Nutrition.CarbohydrateContent != expected[values[1]] {
+		t.Fatalf("carbohydrateContent wrong. expected=%q, got=%q", expected[values[1]], item.Nutrition.CarbohydrateContent)
 	}
-	if item.nutrition.fatContent != expected[values[2]] {
-		t.Fatalf("fatContent wrong. expected=%q, got=%q", expected[values[2]], item.nutrition.fatContent)
+	if item.Nutrition.FatContent != expected[values[2]] {
+		t.Fatalf("fatContent wrong. expected=%q, got=%q", expected[values[2]], item.Nutrition.FatContent)
 	}
-	if item.nutrition.proteinContent != expected[values[3]] {
-		t.Fatalf("proteinContent wrong. expected=%q, got=%q", expected[values[3]], item.nutrition.proteinContent)
+	if item.Nutrition.ProteinContent != expected[values[3]] {
+		t.Fatalf("proteinContent wrong. expected=%q, got=%q", expected[values[3]], item.Nutrition.ProteinContent)
 	}
 }

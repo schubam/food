@@ -16,26 +16,27 @@ import (
 )
 
 // https://schema.org/NutritionInformation
-type MealItem struct {
-	name      string
-	nutrition *Nutrition
+type Nutrition struct {
+	Calories            string // <Number> <Energy unit of measure>
+	CarbohydrateContent string // <Number> <Mass unit of measure> -> in gram
+	FatContent          string // <Number> <Mass unit of measure> -> in gram
+	ProteinContent      string // <Number> <Mass unit of measure> -> in gram
 }
 
-type Nutrition struct {
-	calories            string // <Number> <Energy unit of measure>
-	carbohydrateContent string // <Number> <Mass unit of measure> -> in gram
-	fatContent          string // <Number> <Mass unit of measure> -> in gram
-	proteinContent      string // <Number> <Mass unit of measure> -> in gram
+// https://schema.org/Recipe
+type MealItem struct {
+	Name      string
+	Nutrition *Nutrition
 }
 
 func NewMealItem(name string, calories, carbs, fat, protein float64) *MealItem {
 	item := &MealItem{
-		name: name,
-		nutrition: &Nutrition{
-			calories:            fmt.Sprintf("%d kcal", int(math.Round(calories))),
-			fatContent:          fmt.Sprintf("%.1f g", fat),
-			carbohydrateContent: fmt.Sprintf("%.1f g", carbs),
-			proteinContent:      fmt.Sprintf("%.1f g", protein),
+		Name: name,
+		Nutrition: &Nutrition{
+			Calories:            fmt.Sprintf("%d kcal", int(math.Round(calories))),
+			FatContent:          fmt.Sprintf("%.1f g", fat),
+			CarbohydrateContent: fmt.Sprintf("%.1f g", carbs),
+			ProteinContent:      fmt.Sprintf("%.1f g", protein),
 		},
 	}
 	return item
