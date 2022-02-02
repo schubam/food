@@ -1,2 +1,2 @@
 # food
-Food libraries for meal planning, calorie tracking, etc.
+Food library for meal planning, calorie tracking, etc.
