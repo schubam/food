@@ -25,7 +25,12 @@ type Nutrition struct {
 
 // https://schema.org/Recipe
 type MealItem struct {
+	ID        int64
 	Name      string
+	Calories  int
+	Carbs     int
+	Fat       int
+	Protein   int
 	Nutrition *Nutrition
 }
 
