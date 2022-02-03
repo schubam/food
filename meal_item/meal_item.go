@@ -8,7 +8,7 @@ It will reuse the naming conventions established by schema.org.
 - https://schema.org/NutritionInformation
 */
 
-package food
+package mealitem
 
 import (
 	"fmt"

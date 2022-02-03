@@ -1,4 +1,4 @@
-package food
+package mealitem
 
 import "testing"
 
